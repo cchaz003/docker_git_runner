@@ -1,9 +1,9 @@
 #!/bin/sh
 
 cd /repo
-
+branch=`git rev-parse --abbrev-ref HEAD`
 git fetch
-git merge origin/$CURRENT_BRANCH
+git "merge origin/$(branch)"
 
 FILE=./startup.sh
 if test -f "$FILE"; then
@@ -11,6 +11,8 @@ if test -f "$FILE"; then
     chmod +x startup.sh
     ./startup.sh
     #pip3 install -r requirements.txt
+else
+    echo "No startup script found"
 fi
 
-exec "$@"
+# exec "$@"
