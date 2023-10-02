@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  pyscript:
+    image: chaz003/py_runner
+    volumes:
+      - /some/local/folder:/data
+    environment:
+      - TZ=America/New_York
+
+    #"python -u" gives us an un-buffered output which gives us printed output from scripts
+    #https://stackoverflow.com/questions/23524976/capturing-output-of-python-script-run-inside-a-docker-container
+    command: python -u <script.py>
+
+    #restart: unless-stopped
+  
