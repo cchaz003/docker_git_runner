@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd /repo
+git config --global --add safe.directory /repo
 branch=`git rev-parse --abbrev-ref HEAD`
 git fetch
 git merge origin/$(branch)
