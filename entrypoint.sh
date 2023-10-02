@@ -3,7 +3,7 @@
 cd /repo
 branch=`git rev-parse --abbrev-ref HEAD`
 git fetch
-git "merge origin/$(branch)"
+git merge origin/$(branch)
 
 FILE=./startup.sh
 if test -f "$FILE"; then
