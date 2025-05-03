@@ -1,5 +1,5 @@
 #Deriving the latest base image
-FROM python:3.9
+FROM python:3.13
 
 
 #Labels as key value pair
