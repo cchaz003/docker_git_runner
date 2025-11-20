@@ -7,7 +7,7 @@ services:
     # image: chaz003/git_runner:x64_1.1
     
     volumes:
-      - /some/local/folder:/data
+      - /some/local/repo:/repo
     environment:
       - TZ=America/New_York
 
